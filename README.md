@@ -20,11 +20,12 @@ public documentation (docs.appian.com). Runs entirely on GitHub's free tier.
   pulled from Appian's own master reference pages
   (`Appian_Functions.html`, `Smart_Services.html`) and rebuilt fresh each
   run. Same rule applies — titles and links only, nothing copied.
-- **Backfilling**: every run checks the full list of Appian versions
-  against what's already in `handbook.md` and catches up on anything
-  missing — not just the newest release. So if a run is skipped, or this
-  is the very first run, it fills in every gap in order rather than only
-  ever capturing "whatever was latest that week."
+- **Rolling window**: `handbook.md` and `reference-index.md` always show
+  the **2 most recent releases** and are fully rebuilt each run (not
+  appended to forever). This keeps the handbook a tight "what's current"
+  digest instead of growing into a full historical archive. Want a
+  different window size? Change `KEEP_LAST_N` at the top of
+  `scripts/update_handbook.py`.
 - A small installable **web app** (`index.html` + friends) reads all three
   files and renders them as a searchable, phone-friendly reading experience
   across three tabs: Release Notes, What's New Index, and Full Catalog.
@@ -72,10 +73,9 @@ to be read by anyone, including bots (like search engines).
    allow "Read and write permissions" for workflows (needed so the bot can
    commit updates back to the repo).
 4. **Run it once manually**: go to the "Actions" tab → "Update Appian
-   Handbook" → "Run workflow". The first run will backfill every version
-   Appian's docs currently list, so it may take a little longer than
-   later runs. Check that `handbook.md`, `reference-index.md`, and
-   `catalog.md` all get updated.
+   Handbook" → "Run workflow". Check that `handbook.md`,
+   `reference-index.md`, and `catalog.md` all get updated — you should
+   see exactly the 2 most recent releases in the first two files.
 5. **Turn on GitHub Pages**: Settings → Pages → Source: Deploy from a
    branch → `main` / root → Save. GitHub gives you a URL like
    `https://yourname.github.io/appian-handbook/`.

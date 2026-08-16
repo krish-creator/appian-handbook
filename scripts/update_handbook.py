@@ -5,24 +5,27 @@ Appian Handbook auto-updater.
 What it does, every scheduled run:
 
 1. RELEASE NOTES (handbook.md)
-   Discovers every Appian version listed in the docs version selector,
-   compares that list against what's already recorded in handbook.md, and
-   backfills any missing versions -- not just the newest one. This means a
-   missed run (or the very first run) catches up on everything, in order,
-   instead of silently skipping releases.
+   Discovers every Appian version listed in the docs version selector, and
+   keeps a rolling window of the KEEP_LAST_N most recent releases (default:
+   2). handbook.md is fully regenerated each run from that window -- not
+   appended to forever -- so it stays a tight "what's current" digest
+   rather than growing into a full historical archive.
 
 2. PER-RELEASE REFERENCE LINKS (reference-index.md)
-   For each newly-added release, extracts every function/smart-service/
-   component/record-type/process-model/log/admin link mentioned in that
-   release's notes -- title + link only, filed by category.
+   For each release in that same window, extracts every function/smart-
+   service/component/record-type/process-model/log/admin link mentioned in
+   that release's notes -- title + link only, filed by category. Same
+   rolling window as handbook.md.
 
 3. FULL CATALOG (catalog.md)
-   Separately, rebuilt fresh every run (not appended): a complete index of
-   every Appian function and every smart service, pulled from Appian's own
-   master reference pages (Appian_Functions.html, Smart_Services.html).
-   Again, title + link only -- no reference documentation content is
-   copied, so this stays a navigation index rather than a mirror of
-   Appian's docs.
+   Separately, rebuilt fresh every run: a complete index of every Appian
+   function and every smart service, pulled from Appian's own master
+   reference pages (Appian_Functions.html, Smart_Services.html). This one
+   isn't windowed -- it's always the full current catalog.
+
+   In all three files: title + link only -- no reference documentation
+   content is copied, so this stays a navigation index rather than a
+   mirror of Appian's docs.
 
 Designed to run for free on a schedule via GitHub Actions (see
 .github/workflows/update.yml). It only touches PUBLIC Appian documentation
@@ -44,6 +47,8 @@ HANDBOOK_PATH = ROOT / "handbook.md"
 INDEX_PATH = ROOT / "reference-index.md"
 CATALOG_PATH = ROOT / "catalog.md"
 
+KEEP_LAST_N = 2  # rolling window of most recent releases to keep in handbook.md / reference-index.md
+
 CATEGORY_PATTERNS = [
     (re.compile(r"/fnc_"), "Functions"),
     (re.compile(r"_Smart_Service"), "Smart Services"),
@@ -54,6 +59,22 @@ CATEGORY_PATTERNS = [
     (re.compile(r"admin|Admin_Console", re.IGNORECASE), "Administration"),
     (re.compile(r"_Object|_object\.html"), "Objects"),
 ]
+
+# Page-chrome text that shows up inside <main> on docs.appian.com but isn't
+# actual release-notes content -- share widgets, search-tips, nav labels,
+# image-pan hints, etc. Filtered out verbatim (exact match after strip).
+CHROME_BLOCKLIST = {
+    "Share", "Share via", "LinkedIn", "Reddit", "Email", "Copy Link", "Print",
+    "Ask AI", "Feedback", "Skip to main content",
+    "View this page in the latest version of Appian.",
+    "Scroll or drag to pan · ⌘+/⌘− to zoom · Esc to close",
+    "How search works: Capitalization, punctuation, and special characters are ignored",
+    "Matches in a title, heading, or function name rank higher",
+    "Synonyms are applied",
+    "Wildcards are not supported",
+    "On This Page",
+}
+LONE_VERSION_RE = re.compile(r"^2\d\.\d$")
 
 SEED_URL = "https://docs.appian.com/suite/help/25.3/Appian_Release_Notes.html"
 
@@ -84,18 +105,20 @@ def discover_all_versions() -> list:
     return seen  # newest first
 
 
-def already_recorded_versions() -> set:
-    if not HANDBOOK_PATH.exists():
-        return set()
-    text = HANDBOOK_PATH.read_text(encoding="utf-8")
-    return set(re.findall(r"## Appian ([\d.]+) — synced", text))
+def clean_main(main):
+    """Strip structural chrome (nav/aside/header/footer) that isn't the
+    actual article content, before extracting text."""
+    for tag in main.find_all(["nav", "aside", "header", "footer"]):
+        tag.decompose()
+    return main
 
 
 def html_to_markdown_and_links(main):
+    main = clean_main(main)
     lines = []
     for el in main.find_all(["h1", "h2", "h3", "h4", "p", "li"]):
         text = el.get_text(" ", strip=True)
-        if not text:
+        if not text or text in CHROME_BLOCKLIST or LONE_VERSION_RE.match(text):
             continue
         if el.name == "h1":
             lines.append(f"# {text}")
@@ -115,7 +138,7 @@ def html_to_markdown_and_links(main):
     for a in main.find_all("a", href=True):
         href = a["href"]
         title = a.get_text(" ", strip=True)
-        if not title or not href:
+        if not title or not href or title in CHROME_BLOCKLIST:
             continue
         full_url = href if href.startswith("http") else f"https://docs.appian.com{href}"
         if "docs.appian.com" not in full_url:
@@ -142,45 +165,43 @@ def categorize(url: str):
     return None
 
 
-def append_handbook_entry(version: str, url: str, body: str):
+def build_handbook(entries: list):
+    """entries: list of (version, url, body), oldest first."""
     today = date.today().isoformat()
-    section = f"\n\n---\n\n## Appian {version} — synced {today}\n\nSource: {url}\n\n{body}\n"
+    parts = [
+        "# Appian Handbook\n",
+        "Auto-updated from public Appian release notes. Shows the most "
+        f"recent {KEEP_LAST_N} releases. Not affiliated with or endorsed "
+        "by Appian Corporation.\n",
+    ]
+    for version, url, body in entries:
+        parts.append(f"\n---\n\n## Appian {version} — synced {today}\n\nSource: {url}\n\n{body}\n")
+    HANDBOOK_PATH.write_text("\n".join(parts), encoding="utf-8")
 
-    if not HANDBOOK_PATH.exists():
-        HANDBOOK_PATH.write_text(
-            "# Appian Handbook\n\n"
-            "Auto-updated from public Appian release notes. "
-            "Not affiliated with or endorsed by Appian Corporation.\n"
-        )
-    with HANDBOOK_PATH.open("a", encoding="utf-8") as f:
-        f.write(section)
 
-
-def append_reference_index(version: str, links: dict):
-    if not links:
-        return
-    by_category = {}
-    for url, (title, category) in links.items():
-        by_category.setdefault(category, []).append((title, url))
-
+def build_reference_index(entries_links: list):
+    """entries_links: list of (version, links_dict), oldest first."""
     today = date.today().isoformat()
-    lines = [f"\n\n---\n\n## Appian {version} — indexed {today}\n"]
-    for category in sorted(by_category):
-        lines.append(f"\n### {category}\n")
-        for title, url in sorted(set(by_category[category])):
-            lines.append(f"- [{title}]({url})")
-    section = "\n".join(lines) + "\n"
-
-    if not INDEX_PATH.exists():
-        INDEX_PATH.write_text(
-            "# Appian Reference Index\n\n"
-            "Links only -- titles and URLs pointing to Appian's own official "
-            "documentation for functions, smart services, components, objects, "
-            "and logs mentioned in each release. No reference content is "
-            "copied here; click through to docs.appian.com for the real thing.\n"
-        )
-    with INDEX_PATH.open("a", encoding="utf-8") as f:
-        f.write(section)
+    parts = [
+        "# Appian Reference Index\n",
+        "Links only -- titles and URLs pointing to Appian's own official "
+        "documentation for functions, smart services, components, objects, "
+        f"and logs mentioned in the most recent {KEEP_LAST_N} releases. No "
+        "reference content is copied here; click through to docs.appian.com "
+        "for the real thing.\n",
+    ]
+    for version, links in entries_links:
+        if not links:
+            continue
+        by_category = {}
+        for url, (title, category) in links.items():
+            by_category.setdefault(category, []).append((title, url))
+        parts.append(f"\n---\n\n## Appian {version} — indexed {today}\n")
+        for category in sorted(by_category):
+            parts.append(f"\n### {category}\n")
+            for title, url in sorted(set(by_category[category])):
+                parts.append(f"- [{title}]({url})")
+    INDEX_PATH.write_text("\n".join(parts) + "\n", encoding="utf-8")
 
 
 # ---------------------------------------------------------------------------
@@ -188,31 +209,27 @@ def append_reference_index(version: str, links: dict):
 # ---------------------------------------------------------------------------
 
 def fetch_full_function_catalog(version: str) -> dict:
-    """Appian_Functions.html lists every function, grouped by category,
-    each function name linking to its own reference page."""
     url = f"https://docs.appian.com/suite/help/{version}/Appian_Functions.html"
     try:
         soup = get_soup(url)
     except requests.RequestException:
         return {}
 
-    main = soup.find("main") or soup.find("article") or soup.body
+    main = clean_main(soup.find("main") or soup.find("article") or soup.body)
     catalog = {}
     for a in main.find_all("a", href=True):
         title = a.get_text(" ", strip=True)
         href = a["href"]
         if not title or "(" not in title:
-            continue  # function links render as e.g. "flatten()" / "a!flatten()"
+            continue
         full_url = href if href.startswith("http") else f"https://docs.appian.com{href}"
-        if "docs.appian.com" not in full_url or "/fnc_" not in full_url and "Function" not in full_url:
+        if "docs.appian.com" not in full_url or ("/fnc_" not in full_url and "Function" not in full_url):
             continue
         catalog.setdefault("Functions", []).append((title, full_url))
     return catalog
 
 
 def fetch_full_smart_service_catalog(version: str) -> dict:
-    """Smart service master index -- URL name has varied across doc
-    versions, so try the known variants."""
     candidates = [
         f"https://docs.appian.com/suite/help/{version}/Smart_Services.html",
         f"https://docs.appian.com/suite/help/{version}/Process_Nodes_and_Smart_Services.html",
@@ -222,7 +239,7 @@ def fetch_full_smart_service_catalog(version: str) -> dict:
             soup = get_soup(url)
         except requests.RequestException:
             continue
-        main = soup.find("main") or soup.find("article") or soup.body
+        main = clean_main(soup.find("main") or soup.find("article") or soup.body)
         catalog = {}
         for a in main.find_all("a", href=True):
             title = a.get_text(" ", strip=True)
@@ -266,24 +283,21 @@ def rebuild_catalog(version: str):
 
 def main():
     all_versions = discover_all_versions()   # newest first
-    latest = all_versions[0]
-    print(f"Detected versions (newest first): {all_versions}")
+    window = all_versions[:KEEP_LAST_N]
+    window_oldest_first = list(reversed(window))
+    print(f"Keeping latest {KEEP_LAST_N} releases: {window}")
 
-    recorded = already_recorded_versions()
-    missing = [v for v in all_versions if v not in recorded]
-    missing.sort(key=lambda v: tuple(int(p) for p in v.split(".")))  # oldest first
+    handbook_entries = []
+    index_entries = []
+    for version in window_oldest_first:
+        url, body, links = fetch_release_notes(version)
+        handbook_entries.append((version, url, body))
+        index_entries.append((version, links))
+        print(f"  fetched {version}")
 
-    if not missing:
-        print("Handbook already has every listed version.")
-    else:
-        print(f"Backfilling missing versions: {missing}")
-        for version in missing:
-            url, body, links = fetch_release_notes(version)
-            append_handbook_entry(version, url, body)
-            append_reference_index(version, links)
-            print(f"  added {version}")
-
-    rebuild_catalog(latest)
+    build_handbook(handbook_entries)
+    build_reference_index(index_entries)
+    rebuild_catalog(all_versions[0])
     return 0
 
 
