@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Appian Handbook</title>
+<meta name="description" content="An auto-updating field guide to Appian releases — changelog digests and a linked reference index, installable on your phone." />
+<meta name="theme-color" content="#0F1B2D" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icons/icon-192.png" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Appian HB" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="install-banner" class="install-banner" hidden>
+  <span id="install-text">Save this to your home screen for one-tap access.</span>
+  <button id="install-btn" class="install-btn">Add to Home Screen</button>
+  <button id="install-dismiss" class="install-dismiss" aria-label="Dismiss">&times;</button>
+</div>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <div class="brand-text">
+      <h1>Appian Handbook</h1>
+      <p class="tagline">Field guide to what shipped, and where to read more</p>
+    </div>
+  </div>
+  <div class="status-row">
+    <span id="last-synced" class="pill pill-muted">checking sync…</span>
+    <span id="offline-pill" class="pill pill-warn" hidden>offline copy</span>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist" aria-label="Sections">
+  <button class="tab active" role="tab" aria-selected="true" data-tab="notes">Release Notes</button>
+  <button class="tab" role="tab" aria-selected="false" data-tab="index">Reference Index</button>
+</nav>
+
+<div class="searchbar">
+  <input id="search" type="search" inputmode="search" placeholder="Search releases, functions, components…" aria-label="Search handbook" />
+</div>
+
+<div id="version-ticker" class="version-ticker" aria-label="Release timeline"></div>
+
+<main id="content" class="content">
+  <section id="panel-notes" class="panel" role="tabpanel" aria-labelledby="tab-notes"></section>
+  <section id="panel-index" class="panel" role="tabpanel" aria-labelledby="tab-index" hidden></section>
+</main>
+
+<footer class="footer">
+  <p>Sourced from Appian's public docs at <a href="https://docs.appian.com" target="_blank" rel="noopener">docs.appian.com</a>. Not affiliated with or endorsed by Appian Corporation. Reference Index links out to the originals rather than copying them.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

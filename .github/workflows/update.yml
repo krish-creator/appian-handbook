@@ -1,0 +1,35 @@
+name: Update Appian Handbook
+
+on:
+  schedule:
+    # Runs every Monday at 09:00 UTC. Appian ships quarterly, so weekly
+    # polling is more than enough -- change the cron if you want it rarer.
+    - cron: "0 9 * * 1"
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run updater
+        run: python scripts/update_handbook.py
+
+      - name: Commit changes if any
+        run: |
+          git config user.name "appian-handbook-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add handbook.md reference-index.md .last_version
+          git diff --cached --quiet || git commit -m "Auto-update handbook $(date -u +%Y-%m-%d)"
+          git push
