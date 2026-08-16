@@ -43,6 +43,7 @@ a:hover { color: var(--amber); }
   font-size: 0.85rem;
   font-family: var(--sans);
 }
+.install-banner[hidden] { display: none; }
 .install-banner span { flex: 1; }
 .install-btn {
   background: var(--ink);
@@ -270,6 +271,7 @@ a:hover { color: var(--amber); }
   border-bottom: 1px solid var(--ink-line);
   padding-bottom: 5px;
 }
+.cat-count { color: var(--paper-dim); font-family: var(--mono); font-size: 0.8em; font-weight: 400; }
 .ref-link-list { list-style: none; padding: 0; margin: 0; }
 .ref-link-list li {
   padding: 7px 0;

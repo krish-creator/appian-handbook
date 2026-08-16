@@ -15,20 +15,43 @@ public documentation (docs.appian.com). Runs entirely on GitHub's free tier.
   own docs page**. This is a navigation index, not a copy — it doesn't
   reproduce any reference documentation content, so it's safe to share
   publicly (see "What's legal to share" below).
-- A small installable **web app** (`index.html` + friends) reads those two
-  files and renders them as a searchable, phone-friendly reading experience.
+- It also builds `catalog.md`: a **complete** index of every Appian
+  function and every smart service (not just ones mentioned in a release),
+  pulled from Appian's own master reference pages
+  (`Appian_Functions.html`, `Smart_Services.html`) and rebuilt fresh each
+  run. Same rule applies — titles and links only, nothing copied.
+- **Backfilling**: every run checks the full list of Appian versions
+  against what's already in `handbook.md` and catches up on anything
+  missing — not just the newest release. So if a run is skipped, or this
+  is the very first run, it fills in every gap in order rather than only
+  ever capturing "whatever was latest that week."
+- A small installable **web app** (`index.html` + friends) reads all three
+  files and renders them as a searchable, phone-friendly reading experience
+  across three tabs: Release Notes, What's New Index, and Full Catalog.
   It's a real PWA — people can add it to their home screen and it works
   offline after the first load.
 
 ## What's legal to share
 - ✅ `handbook.md` — paraphrased/summarized release notes with source links
 - ✅ `reference-index.md` — titles + links only, no copied reference content
+- ✅ `catalog.md` — titles + links only for the full function/smart service
+  list, no copied reference content
 - ❌ Do not extend this to mirror the full text of Appian's function,
   smart service, or object reference docs — that's copyrighted reference
   material and republishing it wholesale isn't something this project
-  should do. Link to it instead, like the index already does.
+  should do. Link to it instead, like catalog.md already does.
 - ❌ Do not point this at Appian Academy — it's authenticated training
   content; this tool intentionally never logs in or touches it.
+
+## Current coverage and known gaps
+- **Functions & Smart Services**: fully cataloged (title + link), rebuilt
+  every run from Appian's master reference pages.
+- **Logs & Objects (record types, process models, etc.)**: currently only
+  covered when mentioned inside a release's own notes — there isn't yet a
+  single master index page for these the way there is for functions, so a
+  true "every log type" or "every object" catalog would need a different,
+  more involved crawl. Flagging this honestly rather than guessing at URLs
+  that might not exist — happy to build it out further if useful.
 
 ## What it deliberately does NOT do
 **It does not touch Appian Academy.** Academy is authenticated training
@@ -42,14 +65,17 @@ to be read by anyone, including bots (like search engines).
 1. **Create a free GitHub account** if you don't have one: github.com
 2. **Create a new repository**, e.g. `appian-handbook`. Upload every file in
    this folder — `index.html`, `styles.css`, `app.js`, `manifest.json`,
-   `sw.js`, `icons/`, `handbook.md`, `reference-index.md`, `scripts/`,
-   `.github/` — all at the repo root, keeping the folder structure as-is.
+   `sw.js`, `icons/`, `handbook.md`, `reference-index.md`, `catalog.md`,
+   `scripts/`, `.github/` — all at the repo root, keeping the folder
+   structure as-is.
 3. **Enable Actions**: go to your repo → Settings → Actions → General →
    allow "Read and write permissions" for workflows (needed so the bot can
    commit updates back to the repo).
 4. **Run it once manually**: go to the "Actions" tab → "Update Appian
-   Handbook" → "Run workflow". Check that `handbook.md` and
-   `reference-index.md` get updated.
+   Handbook" → "Run workflow". The first run will backfill every version
+   Appian's docs currently list, so it may take a little longer than
+   later runs. Check that `handbook.md`, `reference-index.md`, and
+   `catalog.md` all get updated.
 5. **Turn on GitHub Pages**: Settings → Pages → Source: Deploy from a
    branch → `main` / root → Save. GitHub gives you a URL like
    `https://yourname.github.io/appian-handbook/`.

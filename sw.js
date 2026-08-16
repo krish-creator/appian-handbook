@@ -15,7 +15,7 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
-  const isContent = url.pathname.endsWith("handbook.md") || url.pathname.endsWith("reference-index.md");
+  const isContent = url.pathname.endsWith("handbook.md") || url.pathname.endsWith("reference-index.md") || url.pathname.endsWith("catalog.md");
 
   if (isContent) {
     // Network-first so a fresh sync shows up immediately; fall back to cache offline.

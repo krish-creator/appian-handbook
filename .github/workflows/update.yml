@@ -30,6 +30,6 @@ jobs:
         run: |
           git config user.name "appian-handbook-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add handbook.md reference-index.md .last_version
+          git add handbook.md reference-index.md catalog.md
           git diff --cached --quiet || git commit -m "Auto-update handbook $(date -u +%Y-%m-%d)"
           git push

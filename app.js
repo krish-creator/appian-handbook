@@ -4,11 +4,13 @@
 
 const HANDBOOK_URL = "handbook.md";
 const INDEX_URL = "reference-index.md";
+const CATALOG_URL = "catalog.md";
 const CACHE_KEY_HANDBOOK = "appian-hb:handbook";
 const CACHE_KEY_INDEX = "appian-hb:index";
+const CACHE_KEY_CATALOG = "appian-hb:catalog";
 const CACHE_KEY_SYNCED = "appian-hb:synced-at";
 
-const state = { notesEntries: [], indexEntries: [], activeTab: "notes" };
+const state = { notesEntries: [], indexEntries: [], catalogCategories: [], activeTab: "notes" };
 
 /* ---------------- fetch + cache ---------------- */
 
@@ -71,7 +73,7 @@ function parseIndex(md) {
 
 function buildIndexEntry(meta, chunk) {
   const categories = [];
-  const catRe = /### (.+)\n((?:- \[.*\]\(.*\)\n?)+)/g;
+  const catRe = /### (.+)\n+((?:- \[.*\]\(.*\)\n?)+)/g;
   let m;
   while ((m = catRe.exec(chunk)) !== null) {
     const title = m[1].trim();
@@ -79,6 +81,19 @@ function buildIndexEntry(meta, chunk) {
     categories.push({ title, links });
   }
   return { ...meta, categories };
+}
+
+/* catalog.md: flat categorized list, no per-version sections, rebuilt each run */
+function parseCatalog(md) {
+  const categories = [];
+  const catRe = /## (.+?) \((\d+)\)\n+((?:- \[.*\]\(.*\)\n?)+)/g;
+  let m;
+  while ((m = catRe.exec(md)) !== null) {
+    const title = m[1].trim();
+    const links = [...m[3].matchAll(/- \[(.*?)\]\((.*?)\)/g)].map(l => ({ title: l[1], url: l[2] }));
+    categories.push({ title, links });
+  }
+  return categories;
 }
 
 /* ---------------- rendering ---------------- */
@@ -127,6 +142,8 @@ function renderIndex() {
 
 function renderTicker() {
   const ticker = document.getElementById("version-ticker");
+  if (state.activeTab === "catalog") { ticker.hidden = true; return; }
+  ticker.hidden = false;
   if (!state.notesEntries.length) { ticker.innerHTML = ""; return; }
   ticker.innerHTML = state.notesEntries.map((e, i) => `
     <button class="version-dot ${i === 0 ? "latest" : ""}" data-version="${e.version}">v${e.version}</button>
@@ -137,6 +154,24 @@ function renderTicker() {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
+}
+
+function renderCatalog() {
+  const panel = document.getElementById("panel-catalog");
+  if (!state.catalogCategories.length) {
+    panel.innerHTML = `<div class="empty-state">No catalog yet. It builds automatically alongside the release notes.</div>`;
+    return;
+  }
+  panel.innerHTML = state.catalogCategories.map(c => `
+    <article class="entry" data-search-blob="${escapeAttr(c.title + ' ' + c.links.map(l => l.title).join(' '))}">
+      <div class="ref-category">
+        <h3>${c.title} <span class="cat-count">(${c.links.length})</span></h3>
+        <ul class="ref-link-list">
+          ${c.links.map(l => `<li><a href="${l.url}" target="_blank" rel="noopener">${escapeHtml(l.title)}</a></li>`).join("")}
+        </ul>
+      </div>
+    </article>
+  `).join("");
 }
 
 function escapeHtml(s) {
@@ -153,6 +188,8 @@ document.querySelectorAll(".tab").forEach(tab => {
     state.activeTab = tab.dataset.tab;
     document.getElementById("panel-notes").hidden = state.activeTab !== "notes";
     document.getElementById("panel-index").hidden = state.activeTab !== "index";
+    document.getElementById("panel-catalog").hidden = state.activeTab !== "catalog";
+    renderTicker();
     applySearch();
   });
 });
@@ -164,10 +201,23 @@ searchInput.addEventListener("input", applySearch);
 
 function applySearch() {
   const q = searchInput.value.trim().toLowerCase();
-  const panelId = state.activeTab === "notes" ? "panel-notes" : "panel-index";
+  const panelId = state.activeTab === "notes" ? "panel-notes" : state.activeTab === "index" ? "panel-index" : "panel-catalog";
   const entries = document.querySelectorAll(`#${panelId} .entry`);
   let anyVisible = false;
   entries.forEach(entry => {
+    if (state.activeTab === "catalog") {
+      // Finer-grained: filter individual function/service links within each category.
+      const items = entry.querySelectorAll(".ref-link-list li");
+      let categoryHasMatch = !q;
+      items.forEach(li => {
+        const match = !q || li.textContent.toLowerCase().includes(q);
+        li.style.display = match ? "" : "none";
+        if (match) categoryHasMatch = true;
+      });
+      entry.style.display = categoryHasMatch ? "" : "none";
+      if (categoryHasMatch) anyVisible = true;
+      return;
+    }
     const blob = entry.dataset.searchBlob || "";
     const match = !q || blob.includes(q);
     entry.style.display = match ? "" : "none";
@@ -226,14 +276,17 @@ if (isIOS && !isStandalone && !localStorage.getItem("appian-hb:install-dismissed
 async function boot() {
   document.getElementById("panel-notes").innerHTML = `<div class="loading-state">Loading handbook…</div>`;
   try {
-    const [handbookMd, indexMd] = await Promise.all([
+    const [handbookMd, indexMd, catalogMd] = await Promise.all([
       loadText(HANDBOOK_URL, CACHE_KEY_HANDBOOK),
       loadText(INDEX_URL, CACHE_KEY_INDEX),
+      loadText(CATALOG_URL, CACHE_KEY_CATALOG).catch(() => ""),
     ]);
     state.notesEntries = parseHandbook(handbookMd);
     state.indexEntries = parseIndex(indexMd);
+    state.catalogCategories = catalogMd ? parseCatalog(catalogMd) : [];
     renderNotes();
     renderIndex();
+    renderCatalog();
     renderTicker();
 
     const synced = localStorage.getItem(CACHE_KEY_SYNCED);
