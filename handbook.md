@@ -5,7 +5,7 @@ Auto-updated from public Appian release notes. Shows the most recent 2 releases.
 
 ---
 
-## Appian 26.6 — synced 2026-08-17
+## Appian 26.6 — synced 2026-08-24
 
 Source: https://docs.appian.com/suite/help/26.6/Appian_Release_Notes.html
 
@@ -27,15 +27,17 @@ Version : 26.6
 
 Expand the capabilities of your AI agents by connecting them directly to external enterprise systems using Model Context Protocol (MCP). Instead of building complex custom integrations for every third-party platform, you can now use a generic MCP connected system to link your AI agents to tools like GitHub, Snowflake, and Google Drive. This streamlined integration allows you to incorporate external capabilities into your AI agent's toolkit, eliminating development overhead and dramatically reducing your maintenance burden.
 
-### Use natural language to plan and build applications
+### Build applications with dev agents
 
-Turn your requirements into working applications with Appian Composer and its new capability, dev agent —an intelligent assistant for end-to-end application development. This connected experience helps you organize development, delegate work to AI, and stay in control of every change.
+Turn your requirements into working applications with Appian Composer and its new capability, dev agents —agentic AI for building applications through natural language. This connected experience helps you organize development, delegate work to AI, and stay in control of every change.
 
 You can choose how much AI assistance to use as you build. Have Composer generate the foundational design objects for your application, or build manually and use the dev agent when you want AI support.
 
-When you start building from Plan view, your stories become trackable development work on a kanban-style board , giving you a clear view of progress and the tasks that remain. When you're ready, simply assign specific tasks to the dev agent for automatic execution.
+When you start building from Plan view, your stories become trackable development work on a kanban-style board , giving you a clear view of progress and the tasks that remain. When you're ready, simply assign tasks to the dev agent for automatic execution.
 
-Dev agent isn't limited to story tasks, either–—you can use plain language anytime to build brand-new design objects or edit existing ones on the fly. Instead of updating each record type, interface, process model, and expression rule individually, use specific and natural language to describe your overall goal for the business objects and application. Whether you're working from the Board tab , the Build view , or an interface object , the dev agent coordinates the necessary updates and accounts for dependencies between objects. Step-by-step previews and real-time feedback let you review each change, giving you the speed of AI-assisted development without losing oversight.
+Dev agent isn't limited to story tasks, either—you can use plain language anytime to build brand-new design objects or edit existing ones on the fly. Instead of updating each record type, interface, process model, and expression rule individually, use specific and natural language to describe your overall goal for the business objects and application.
+
+Whether you're working from the Board tab , the Build view , or an interface object , dev agents coordinate the necessary updates and accounts for dependencies between objects. Step-by-step previews and real-time feedback let you review each change, giving you the speed of AI-assisted development without losing oversight.
 
 ### Appian and Snowflake partner to activate data & AI in process
 
@@ -733,6 +735,12 @@ Version : 26.6
 
 We've added an icon to interface test scenarios to show which scenario was last used, providing you with the context you need to efficiently test your interfaces.
 
+### Build and modify interfaces with AI mode
+
+Version : 26.6
+
+With the introduction of dev agents , we're bringing a new editing mode to interface objects: AI mode . Switch to AI mode to chat with the dev agent and describe what you want to build in plain language. AI mode replaces the previous AI Copilot capability to generate an interface from a PDF.
+
 ### Apply colors in the styled text editor
 
 Version : 26.4
@@ -1020,7 +1028,7 @@ Appian Cloud is no longer accepting new customers in the Seoul region. We will r
 
 ---
 
-## Appian 26.7 — synced 2026-08-17
+## Appian 26.7 — synced 2026-08-24
 
 Source: https://docs.appian.com/suite/help/26.7/Appian_Release_Notes.html
 
@@ -1076,17 +1084,27 @@ Version : 26.7
 
 When you choose Appian as your cloud provider, you can now use GPT 5.4 and 5.5 to power AI experiences in Appian. These highly capable reasoning models serve as reliable alternatives to Anthropic models for your generative AI skills and a!genAiModels() function. Built on a secure foundation, this approach easily meets both strict public sector compliance and regional data residency requirements.
 
+### Access live AI model limits dynamically
+
+Version : 26.7
+
+Scale your generative AI features across new models and providers without manual app updates. The a!genAiModels() function now retrieves live operational metadata about limits and restrictions. File size limits, page counts, and spreadsheet boundaries are all retrieved and categorized by task type. Now your apps are automatically updated with backend limit changes, so you no longer need to maintain static restrictions in your code.
+
+## AI skills
+
 ### Streamline model management with automatic routing
 
 Version : 26.7
 
 Protect automated processes from model deprecations with the new Auto option for AI skills . It dynamically routes executions to the best available Appian-recommended model—so your workflows keep running smoothly as models evolve, with no manual intervention required.
 
-### Access live AI model limits dynamically
+## Appian Composer
 
-Version : 26.7
+### Build applications with dev agents
 
-Scale your generative AI features across new models and providers without manual app updates. The a!genAiModels() function now retrieves live operational metadata about limits and restrictions. File size limits, page counts, and spreadsheet boundaries are all retrieved and categorized by task type. Now your apps are automatically updated with backend limit changes, so you no longer need to maintain static restrictions in your code.
+The dev agent is a capability of Appian Composer that builds and modifies design objects from natural-language instructions. Developers describe what they want, review the proposed plan, and approve execution. Whether working from the Board tab , the Build view , or an interface object , the dev agent coordinates updates and accounts for dependencies between objects.
+
+Note: The dev agent was introduced in Appian 26.6. For the full release note, see Build applications with dev agents in the 26.6 release notes.
 
 ## RPA
 

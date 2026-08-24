@@ -5,7 +5,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ---
 
-## Appian 26.6 — indexed 2026-08-17
+## Appian 26.6 — indexed 2026-08-24
 
 
 ### Administration
@@ -27,6 +27,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ### Objects
 
+- [editing mode](https://docs.appian.cominterface_object.html#editing-modes)
 - [test scenarios](https://docs.appian.cominterface_object.html#test-scenarios)
 
 ### Process Models
@@ -91,7 +92,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ---
 
-## Appian 26.7 — indexed 2026-08-17
+## Appian 26.7 — indexed 2026-08-24
 
 
 ### Administration
