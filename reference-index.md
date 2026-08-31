@@ -5,7 +5,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ---
 
-## Appian 26.6 — indexed 2026-08-24
+## Appian 26.6 — indexed 2026-08-31
 
 
 ### Administration
@@ -92,7 +92,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ---
 
-## Appian 26.7 — indexed 2026-08-24
+## Appian 26.8 — indexed 2026-08-31
 
 
 ### Administration
@@ -100,10 +100,26 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 - [Admin Console](https://docs.appian.comAppian_Administration_Console.html)
 - [Admin Console](https://docs.appian.comadmin-appian-authentication.html#sign-out-redirect)
 - [configuration in the Admin Console](https://docs.appian.comadmin-appian-authentication.html#skip-authenticator-app-setup)
+- [device trust option](https://docs.appian.comadmin-appian-authentication.html#device-trust)
 
 ### Components
 
+- [Decimal (Floating Point)](https://docs.appian.comFloating_Point_Component.html)
+- [Document image](https://docs.appian.comDocument_Image_Component.html)
+- [Editable grid](https://docs.appian.comEditable_Grid_Component.html)
+- [Integer](https://docs.appian.comInteger_Component.html)
+- [User image](https://docs.appian.comUser_Image_Component.html)
+- [Video](https://docs.appian.comVideo_Component.html)
+- [Web image](https://docs.appian.comWeb_Image_Component.html)
+- [a!processTaskLink()](https://docs.appian.comProcess_Task_Link_Component.html)
+- [chart components](https://docs.appian.comSAIL_Components.html#charts)
+- [event history list](https://docs.appian.comEvent_History_List_Component.html)
+- [file upload](https://docs.appian.comFile_Upload_Component.html)
+- [page link](https://docs.appian.comPage_Link_Component.html)
+- [read-only grid](https://docs.appian.comPaging_Grid_Component.html)
+- [record action](https://docs.appian.comRecord_Action_Component.html)
 - [rich text](https://docs.appian.comRich_Text_Component.html)
+- [safe link](https://docs.appian.comWeb_Link_Component.html)
 - [signature](https://docs.appian.comSignature_Component.html)
 
 ### Logs
@@ -116,4 +132,12 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ### Objects
 
+- [interfaces](https://docs.appian.cominterface_object.html)
+- [sites](https://docs.appian.comsites_object.html)
 - [test values](https://docs.appian.cominterface_object.html#testing-interfaces)
+
+### Smart Services
+
+- [Execute AI Agent smart service](https://docs.appian.comExecute_AI_Agent_Smart_Service.html)
+- [Send Push Notification](https://docs.appian.comSend_Push_Notification_Smart_Service.html)
+- [Start Process Smart Service](https://docs.appian.comStart_Process_Smart_Service.html)

@@ -5,7 +5,7 @@ Auto-updated from public Appian release notes. Shows the most recent 2 releases.
 
 ---
 
-## Appian 26.6 — synced 2026-08-24
+## Appian 26.6 — synced 2026-08-31
 
 Source: https://docs.appian.com/suite/help/26.6/Appian_Release_Notes.html
 
@@ -17,7 +17,7 @@ Join our Appian marketing team and other Appian experts as they dig into highlig
 
 Join our Appian marketing team and other Appian experts as they dig into highlights from the 26.6 release. You can also checkout our Release Showcase course on Academy Online to take a deeper dive into the latest features.
 
-Access new features and improvements every month on Appian Cloud
+Access new features and improvements every month on Appian Cloud. Appian Documentation is based on the latest hotfix for each release.
 
 ## Release Highlights
 
@@ -27,17 +27,17 @@ Version : 26.6
 
 Expand the capabilities of your AI agents by connecting them directly to external enterprise systems using Model Context Protocol (MCP). Instead of building complex custom integrations for every third-party platform, you can now use a generic MCP connected system to link your AI agents to tools like GitHub, Snowflake, and Google Drive. This streamlined integration allows you to incorporate external capabilities into your AI agent's toolkit, eliminating development overhead and dramatically reducing your maintenance burden.
 
-### Build applications with dev agents
+### Build applications with natural language
 
-Turn your requirements into working applications with Appian Composer and its new capability, dev agents —agentic AI for building applications through natural language. This connected experience helps you organize development, delegate work to AI, and stay in control of every change.
+Turn your requirements into working applications with Appian Composer in the Build view . This connected experience helps you organize development, delegate work to AI, and stay in control of every change.
 
-You can choose how much AI assistance to use as you build. Have Composer generate the foundational design objects for your application, or build manually and use the dev agent when you want AI support.
+You can choose how much AI assistance to use as you build. Have Composer generate the foundational design objects for your application, or build manually and use Composer when you want AI support.
 
-When you start building from Plan view, your stories become trackable development work on a kanban-style board , giving you a clear view of progress and the tasks that remain. When you're ready, simply assign tasks to the dev agent for automatic execution.
+When you start building from Plan view, your stories become trackable development work on a kanban-style board , giving you a clear view of progress and the tasks that remain. When you're ready, simply assign tasks to Composer for automatic execution.
 
-Dev agent isn't limited to story tasks, either—you can use plain language anytime to build brand-new design objects or edit existing ones on the fly. Instead of updating each record type, interface, process model, and expression rule individually, use specific and natural language to describe your overall goal for the business objects and application.
+Composer isn't limited to story tasks, either—you can use plain language anytime to build brand-new design objects or edit existing ones on the fly. Instead of updating each record type, interface, process model, and expression rule individually, use specific and natural language to describe your overall goal for the business objects and application.
 
-Whether you're working from the Board tab , the Build view , or an interface object , dev agents coordinate the necessary updates and accounts for dependencies between objects. Step-by-step previews and real-time feedback let you review each change, giving you the speed of AI-assisted development without losing oversight.
+Whether you're working from the Board tab , the Build view , or an interface object , Composer coordinates the necessary updates and accounts for dependencies between objects. Step-by-step previews and real-time feedback let you review each change, giving you the speed of AI-assisted development without losing oversight.
 
 ### Appian and Snowflake partner to activate data & AI in process
 
@@ -246,6 +246,12 @@ Bring your existing assets directly into Composer to keep your plans grounded in
 Version : 26.6
 
 Building on its ability to import Excel files , Appian Composer now automatically interprets the formulas, conditional logic, and macros within your Excel-based EUCs to extract business requirements. This helps you easily generate a modernization plan that accurately mirrors your legacy app's functionality—saving you from all that manual conversion.
+
+### Speed up Composer with Sonnet 4.5
+
+Version : 26.6
+
+Tailor exactly how Composer leverages generative AI without losing oversight. Appian Composer now supports Sonnet 4.5, giving you more ways to power your Composer experience in Appian. Sonnet 4.5 brings large context windows and fast processing to your planning and building workflows, while leveraging data flows designed to meet regional availability and compliance requirements.
 
 ## RPA
 
@@ -739,7 +745,7 @@ We've added an icon to interface test scenarios to show which scenario was last 
 
 Version : 26.6
 
-With the introduction of dev agents , we're bringing a new editing mode to interface objects: AI mode . Switch to AI mode to chat with the dev agent and describe what you want to build in plain language. AI mode replaces the previous AI Copilot capability to generate an interface from a PDF.
+With the introduction of Composer in the Build view , we're bringing a new editing mode to interface objects: AI mode . Switch to AI mode to chat with Composer and describe what you want to build in plain language. AI mode replaces the previous AI Copilot capability to generate an interface from a PDF.
 
 ### Apply colors in the styled text editor
 
@@ -1028,13 +1034,13 @@ Appian Cloud is no longer accepting new customers in the Seoul region. We will r
 
 ---
 
-## Appian 26.7 — synced 2026-08-24
+## Appian 26.8 — synced 2026-08-31
 
-Source: https://docs.appian.com/suite/help/26.7/Appian_Release_Notes.html
+Source: https://docs.appian.com/suite/help/26.8/Appian_Release_Notes.html
 
 # Appian Release Notes
 
-Access new features and improvements every month on Appian Cloud
+Access new features and improvements every month on Appian Cloud. Appian Documentation is based on the latest hotfix for each release.
 
 ## Appian MCP Server
 
@@ -1043,6 +1049,20 @@ Access new features and improvements every month on Appian Cloud
 Version : 26.7
 
 Explore your process data through natural language using the Appian MCP Server . We've added process insights capabilities to the Appian MCP Server, so you can ask questions like "How long are cases taking?" or "What does our approval process look like?" and get reliable answers directly from your process data. Get to insights faster with an AI-powered analysis partner, backed by the same analytical engine and security that powers Process HQ .
+
+### Uncover root causes and process bottlenecks with AI
+
+Version : 26.8
+
+We've extended the Appian MCP Server's process insights capabilities so your AI applications can go beyond querying and start analyzing your data. Your agents can now generate suggested insights that surface combinations of characteristics driving KPI performance, retrieve the full process diagram with all activities and sequences, and get follow-up recommendations on what to explore next.
+
+Ask "why is this KPI underperforming?" and your agent identifies which characteristics have the most impact. Ask "where are the bottlenecks?" and it returns activity and sequence durations for the full process, not just a summary. And because each response includes suggested next steps, even users new to process analysis can follow the trail to a root cause.
+
+### Find the right record types faster
+
+Version : 26.8
+
+We've enhanced the appian_data_fabric_metadata tool in our Appian MCP Server to make finding the right data easier for external AI agents. Now, even when an agent doesn't know the exact name of a record type, simple search queries bring back the most relevant record types across your data fabric. With this update, external agents can find and query the precise data they need in a flash.
 
 ## AI agents
 
@@ -1076,6 +1096,50 @@ Version : 26.7
 
 The a!agentChatField() component now enables you to take full visual control over your chat interfaces with new shape and showBorder parameters. These parameters let you quickly configure the shape of container corners, as well as show or hide outer borders. Now you can deliver more tailored conversational experiences to your users.
 
+### Quickly add AI agents to your process models
+
+Version : 26.8
+
+Bringing an AI agent into a process is now a streamlined experience. Instead of configuring manual expressions, just select your AI agent in the new Setup tab of the Execute AI Agent smart service and watch the node populate with the configured inputs and outputs. You'll also get built-in outputs for success status, run summary, error messages, and AI actions consumed—everything you need to handle errors gracefully and keep an eye on your AI usage.
+
+### Pinpoint the exact AI agent run you need
+
+Version : 26.8
+
+When you test an AI agent with different inputs, new Input and Output columns on the Monitor tab now show what actually changed. The new columns display each run's unique values, so you can tell your AI agent runs apart at a glance. Pair that with the ability to search across those values and debugging your AI agents becomes quick and intuitive.
+
+### Cut AI action costs with automatic prompt caching for AI agents
+
+Version : 26.8
+
+Scale your high-volume AI automations without watching your AI action costs climb. Now, AI agents automatically cache the static parts of their context—including system instructions and tool schemas—at the start of every agent run, so each step the agent takes in the run only processes what's new. Everything happens behind the scenes, with no configuration required!
+
+### Query across multiple record types instantly with new system tools
+
+Version : 26.8
+
+Equip your AI agents with new SQL query and metadata discovery system tools to resolve complex, multi-record data questions in a fraction of the time and with fewer AI actions. AI agents can now execute JOINs and aggregations across multiple record types in a single, efficient operation—no developer configuration required! And, these tools automatically respect your existing row and field-level security, so you can deliver robust results without compromising governance.
+
+### Easily manage and organize your agent's tools and resources
+
+Version : 26.8
+
+We've redrawn the line between tools and resources in AI agents, so every agent's capabilities are easy to understand at a glance. Executable actions like process models, expression rules, and Model Context Protocol (MCP) connections stay on the Tools tab, now joined by system tools like document readers and record queries that are finally visible and yours to control. Passive data like record types, documents, and folders has moved to a new Resources tab , making it obvious what your agent can reference versus what it can actually do. New agents start with zero tools enabled to keep simple agents fast, and a Select All shortcut gets you full agentic capability in one click.
+
+## AI skills
+
+### Streamline model management with automatic routing
+
+Version : 26.7
+
+Protect automated processes from model deprecations with the new Auto option for AI skills . It dynamically routes executions to the best available Appian-recommended model—so your workflows keep running smoothly as models evolve, with no manual intervention required.
+
+### Use Word documents with Azure GPT and Appian GPT
+
+Version : 26.8
+
+The Azure GPT and Appian GPT models now support Microsoft Word (.docx) files in the text-only mode of your generative AI skills , eliminating the need to convert them to PDF first. Now you can bring your Word files directly into your AI processes.
+
 ## AI governance
 
 ### Expand Your AI Options with GPT 5.4 and 5.5
@@ -1090,27 +1154,35 @@ Version : 26.7
 
 Scale your generative AI features across new models and providers without manual app updates. The a!genAiModels() function now retrieves live operational metadata about limits and restrictions. File size limits, page counts, and spreadsheet boundaries are all retrieved and categorized by task type. Now your apps are automatically updated with backend limit changes, so you no longer need to maintain static restrictions in your code.
 
-## AI skills
+### More ways to connect Appian directly to your enterprise AI gateway
 
-### Streamline model management with automatic routing
+Version : 26.8
 
-Version : 26.7
-
-Protect automated processes from model deprecations with the new Auto option for AI skills . It dynamically routes executions to the best available Appian-recommended model—so your workflows keep running smoothly as models evolve, with no manual intervention required.
+Route your Appian AI traffic straight through enterprise AI gateways like Portkey, LiteLLM, and Kong. When you configure a custom AI provider , you can now add the OpenAI Chat Completion protocol, set a custom authentication header, and specify the model ID to send with each request—all from the Admin Console. Connect your gateway directly and keep model governance, cost tracking, and audit controls in one place, no translation proxy required.
 
 ## Appian Composer
 
-### Build applications with dev agents
+### Build applications with natural language
 
-The dev agent is a capability of Appian Composer that builds and modifies design objects from natural-language instructions. Developers describe what they want, review the proposed plan, and approve execution. Whether working from the Board tab , the Build view , or an interface object , the dev agent coordinates updates and accounts for dependencies between objects.
+Version : 26.7
 
-Note: The dev agent was introduced in Appian 26.6. For the full release note, see Build applications with dev agents in the 26.6 release notes.
+Turn your requirements into working applications with Appian Composer in the Build view . This connected experience helps you organize development, delegate work to AI, and stay in control of every change.
+
+You describe what you want, review the proposed plan, and approve execution. Whether working from the Board tab , the Build view , or an interface object , Composer coordinates updates and accounts for dependencies between objects.
+
+Note: Composer in the Build view was introduced in Appian 26.6. For the full release note, see Build applications with natural language in the 26.6 release notes.
+
+### Improved planning and context management in Composer
+
+Version : 26.8
+
+We've improved how Composer presents plan suggestions, making it easier to review and approve proposed changes to your application. Composer also now builds interfaces connected to record data more effectively and maintains context across longer conversations, so you can iterate on complex requirements without losing your place.
 
 ## RPA
 
 ### Easily automate your core mainframe applications
 
-Version : 9.25 (26.7)
+Version : 26.7
 
 Bring enterprise-grade support and modern efficiency to your workflows with our new native, fully supported Mainframe feature .
 
@@ -1118,17 +1190,63 @@ You can use simple drag-and-drop actions to securely connect your core legacy sy
 
 ### Update RPA credentials directly within robotic tasks
 
-Version : 9.25 (26.7)
+Version : 26.7
 
 Rotate and update your RPA credentials securely without ever leaving your robotic task. The new Update Credential action writes new passwords directly to the credential store during execution using a credential UUID. By eliminating complex API calls and keeping sensitive data entirely within the robotic task, you can now implement fully automated, end-to-end credential rotation workflows with complete confidence.
 
 ### Revert your RPA infrastructure topologies safely
 
-Version : 9.24 (26.6)
+Version : 26.7
 
 Appian Cloud RPA sites can now be reverted from a Highly Available (HA) topology to a single-node configuration when required, such as for troubleshooting or broader topology changes. Appian Support manages the transition, and your existing agents, robots, and robotic tasks continue to function without manual updates.
 
 ## Deployments
+
+### A visual way to resolve deployment conflicts for interfaces and expression rules
+
+Version : 26.8
+
+We're making it a breeze to resolve conflicts for interfaces and expression rules during deployments. When overlapping changes create conflicts in Compare and Deploy, a three-pane view lets you inspect source and target values side by side, select the right values from each version, and verify your result directly in the object before saving. Once you save, your object's status in Compare and Deploy updates to Conflict Resolved so you know exactly where you stand. With more streamlined conflict resolution workflows, your team's hard work stays protected—even when developing at high velocity.
+
+### More release context at your fingertips for all deployment types
+
+Version : 26.8
+
+You can now get information about the releases in your deployment directly in the Deployment REST API, Compare and Deploy, and Export workflows.
+
+#### Programmatically deploy by release
+
+Version : 26.8
+
+Automating deployments just got easier.  We've introduced a new Release Details API endpoint that retrieves all the releases and the packages associated with them, so you can go straight from getting release information to starting your deployment pipeline with the export API.
+
+We've also updated the Application Package Details API to include release information, so you can keep track of package and release associations even for programmatic deployments.
+
+And getting the release and package UUIDs that your deployment APIs depend on is now a breeze! Just open the properties dialog for your release or package, copy the UUID, and use it to power your programmatic deployments!
+
+With these powerful deployment API capabilities and easy-to-find UUIDs, your external pipelines can fully leverage releases without any manual coordination or intervention.
+
+#### See release details at a glance for direct and manual deployments
+
+Version : 26.8
+
+For direct or manual deployments, new easy-to-read tags for releases allow you to quickly view and check release information directly from your deployment workflows.
+
+When doing a direct deployment from the environment level of the Packages view , you'll see a tag for each release associated with packages in the deployment right from the Prepare Deployment step of Compare and Deploy .
+
+You'll also see these same helpful tags when manually exporting ! And, we'll even show the release name alongside the package in any package filter throughout Designer, so you can easily confirm you have the exact package you need.
+
+Displaying release information with intuitive, easy-to-read tags enables you to easily verify that your packages perfectly match your expected releases —simplifying your final checks and streamlining your deployment processes.
+
+### Seamlessly deploy applications with synced record types
+
+Version : 26.8
+
+We've introduced two new import customization file properties that give you greater control and flexibility when deploying applications with synced record types.
+
+Enable postDeploymentSync to sync large record types after deployment completes, preventing deployment timeouts and keeping your pipelines on track.
+
+You can also turn on updateSqlReferenceNames to let Appian automatically update duplicate SQL reference names to new, unique values during import. This eliminates manual renaming, saving you time and ensuring your deployments succeed without a hitch.
 
 ### Deploy larger database script files
 
@@ -1143,6 +1261,32 @@ Version : 26.7
 We've added the intuitive and easy-to-read object references you know and love directly into the object comparison view . Now, you can know exactly which objects are being referenced at a glance, providing you with a more streamlined version management experience and deployment workflow.
 
 ## Data fabric
+
+### Use Oracle data with unsynced record types
+
+Version : 26.8
+
+We're continuing to expand Appian's data fabric by adding Oracle to our list of supported data sources for unsynced record types . This means you can now build record types that connect directly to your Oracle databases, while still leveraging the data fabric features you know and love, like record-level security and relationships.
+
+### Deliver highly focused smart search results
+
+Version : 26.8
+
+The new a!smartSearch() function lets you limit the scope of your search to a precise subset of data, enabling more focused search results. Pass record identifiers to search only the records that matter, like a single customer's support cases or a specific contract document, instead of evaluating all data in the record type.
+
+Even if you don't need to limit your search scope, you can still use a!smartSearch() to search across all records in a record type. It requires fewer lines of code than the equivalent a!queryFilter() approach and includes a built-in parameter for setting a similarity score threshold.
+
+### Enable smart search on more record types
+
+Version : 26.8
+
+You can now enable smart search on synced record types with composite primary keys, bringing semantic and lexical search capabilities to a wider range of data models. With this enhancement, users can quickly find the information they need, no matter how your underlying data is structured.
+
+### Quickly update security for multiple fields at once
+
+Version : 26.8
+
+You can now simultaneously edit field-level security for multiple fields, saving you time configuring your record types. Simply select all the fields you want to modify and apply your security settings in a single step—making it easier than ever to protect sensitive data across your applications.
 
 ### Richer record type metadata with a!recordTypeProperties()
 
@@ -1188,6 +1332,20 @@ You can now stream the following event consumer logs to your own systems using A
 
 ## Process modeling and autoscale
 
+### Add user input tasks to autoscaled processes
+
+Version : 26.8
+
+Expand your use of autoscale to task-based applications with support for user input tasks , using the task features from standard processes.
+
+We're also making it easier to report on your tasks with a!queryTaskList() , a new function that queries tasks from both standard and autoscale processes directly in your interfaces—no process report required. With the power to build unified task lists from both types of process models, you can migrate process models to autoscale incrementally with minimal refactoring and without sacrificing the existing user experience.
+
+We've also updated a!processTaskLink() and a!urlForTask() to accept task IDs from both standard and autoscale processes so you can keep using task reports and interfaces built with those functions.
+
+And you can now configure the Start Process Smart Service to follow an activity chain into an autoscaled child process. This lets you build modular, reusable process models that can be shared across workflows, all while preserving the seamless user experience of activity chaining. Best of all, process models that use subprocess nodes with activity chaining can be migrated to autoscale, and Appian will automatically convert them to Start Process nodes.
+
+Now you can take advantage of autoscale with familiar task and reporting experiences for your users.
+
 ### Model processes in your preferred language
 
 Version : 26.7
@@ -1195,6 +1353,24 @@ Version : 26.7
 The process modeler now uses your locale setting to display labels and UI elements in your preferred language. Enjoy a better process modeling experience and boosted development efficiency for global teams.
 
 ## Process HQ
+
+### Focus suggested insights on the attributes that matter
+
+Version : 26.8
+
+We're giving you more control over which attributes Process HQ considers when it generates suggested insights for a KPI. Now you can filter suggested insights to exclude specific attribute categories and Process HQ will automatically regenerate the feed to focus on what's most relevant to your analysis. And, because filters are saved per KPI, you can bring a different analytical lens to every KPI in your process.
+
+### Add the process diagram to your dashboards
+
+Version : 26.8
+
+We've added the process diagram as a new report type . Create a report based on process data to select the new process diagram option and apply filters to focus on the cases you care about. Then, add it to any dashboard to get a holistic view of how your process actually operates alongside other process or dataset reports.
+
+### Add process event data to your reports
+
+Version : 26.8
+
+When you build a report from a process , you can now select event fields to show alongside your case fields in each case row. With the added context of details like event names and durations in each case row, you can see your cases and the lifecycles behind them in a single report.
 
 ### Unify your dashboard view with date filters and saved defaults
 
@@ -1206,31 +1382,59 @@ Now, users can select a custom date range, and every item on the dashboard will 
 
 Together, these updates give you more control over your dashboard experience and help your business users get to insights faster.
 
-### Focus your process calculations with a working schedule
-
-Version : 26.7
-
-When you're monitoring SLA compliance or optimizing your business process , you need your duration calculations to be as accurate as possible. We're adding the ability to exclude weekends from duration calculations, so the time spent on each task reflects your organization's working hours.
-
 ### Sort report grids while viewing a dashboard
 
 Version : 26.7
 
 We've added the ability for report viewers to sort grid columns directly from a dashboard . Click any column header to quickly organize your data in ascending or descending order.
 
+### Dashboard improvements
+
+Version : 26.8
+
+We've made your dashboards more flexible to build and filter. You can now add a report to an existing dashboard while working in the report, or straight from the Reports and Dashboards library on the Process HQ home page . And, when you apply a date filter to your dashboard, you can now pick a relative date range like Last 7 Days, Last 12 Months, or Year-to-Date.
+
+We've also upgraded all dashboards created prior to our 26.5 release to the new flexible dashboard layout. Now, all your dashboards have a more customizable layout.  Your end users may notice a slight adjustment to the sizing of some of their reports on the dashboard as a result of this upgrade.
+
+### Focus your process calculations with a working schedule
+
+Version : 26.7
+
+When you're monitoring SLA compliance or optimizing your business process , you need your duration calculations to be as accurate as possible. We're adding the ability to exclude weekends from duration calculations, so the time spent on each task reflects your organization's working hours.
+
 ### Access insights quickly with more performant dashboards
 
 Version : 26.7
 
-We've enhanced the performance of Process HQ dashboards , resulting in initial load times that are up to 50% faster and subsequent interactions that are up to 36% faster. This speed boost accelerates your business users' ability to make data-driven decisions by allowing them to swiftly analyze and interact with critical reports.
+We've enhanced the performance of Process HQ dashboards , resulting in load times that are up to 40% faster. This speed boost accelerates your business users' ability to make data-driven decisions by allowing them to swiftly analyze critical reports.
+
+## Sites and portals
+
+### More CSS profile properties for buttons and an improved configuration experience
+
+Version : 26.7
+
+We're continuing to deliver more robust CSS profile capabilities so you can map your organization's unique design system directly to your interfaces.
+
+In 26.7, we introduced even more CSS profile properties to give you greater control over your interface styling. These new properties allow you to easily customize button padding, font styling, minimum button width, and border width, as well as spacing between buttons. Additionally, you can now precisely control the border radius of card and box layouts.
+
+Building on those updates, 26.8 adds support for code comments in the CSS profile properties configuration. Now, you can annotate the list of properties to explain design decisions or keep your profiles organized as they grow.
 
 ## Interfaces
 
 ### Visually explore your data relationships
 
-Version : 26.7
+Version : 26.8
 
-Introducing the Record Knowledge Graph component , an interactive graph that lets you visually explore how your records connect across your applications. Simply specify a starting record and the depth of nested relationships to instantly see all of its related records. Now, your users can seamlessly navigate through complex data models and see the big picture at a glance.
+The record knowledge graph component lets you visually explore how your data connects across your applications. Simply specify a starting record and relationship depth to instantly see connected records.
+
+Now, user-friendly display names for your record types provide business users with context at a glance. And, you can also create a cleaner, sleeker layout for your users by hiding the mini map on your graph with the showMiniMap parameter.
+
+### Seamlessly navigate between site and portal pages with the page link component
+
+Version : 26.8
+
+Introducing page link , a dedicated component to navigate between pages within site and portals. Previously, linking between site and portal pages caused a full page reload. The page link component changes only the page content, so the navigation bar stays in place and transitions feel smoother. Use it with the Send Push Notification smart service, cards, rich text, and any other component that accepts links to deliver consistent navigation from anywhere in your app.
 
 ### More flexible tab layouts with vertical orientation, async loading, and new tab widths
 
@@ -1254,17 +1458,31 @@ Establish a clear visual hierarchy and match your organization's exact typograph
 
 Additionally, you can quickly add emphasis to box and card layouts by adjusting the border thickness, or draw the user's eye by configuring the border color of box layouts.
 
+### Refined styling for file upload, signature, and read-only grid components
+
+Version : 26.8
+
+We've evolved the file upload and signature components, so you can now control the color of their buttons independently from style.
+
+Choose from button styles such as outline or solid, then set the color separately.
+
+The signature component gets a sleek refresh too, with a new dashed signature line and extra padding for more room. We've also made the pen stroke more prominent to ensure that all signatures are crisp and easy to read.
+
+Additionally, outline buttons in the read-only grid , event history list , and record action components now use a transparent background, so they blend more naturally into dark backgrounds.
+
+### More control and clarity for charts
+
+Version : 26.8
+
+You can now control whether chart legends are static or interactive. A new parameter on all chart components lets you display the legend as a static color key instead of an interactive filter, making charts more usable for keyboard and screen reader users.
+
+Additionally, data labels in charts now use smart contrast which automatically adjusts labels so they're readable against any background.
+
 ### Accelerate and streamline your interface testing workflow
 
 Version : 26.7
 
 Now, there's a simpler way to configure test values for rule inputs in interfaces. You can easily save test values as a new or existing test scenario without navigating to the Manage Test Scenarios screen. This seamless experience eliminates context switching, allowing you to test and refine your interfaces without breaking your flow.
-
-### Enhanced legibility for the signature component
-
-Version : 26.7
-
-We've made the pen stroke in the signature component more prominent to ensure that all signatures are crisp and easy to read. Now, your users can verify signed documents more quickly.
 
 ### Updated Appian SAIL Component Library in Figma
 
@@ -1274,21 +1492,51 @@ We've released a new version of the Appian SAIL Component Library in Figma with 
 
 While mocking up SAIL UIs directly in Appian will always be the most efficient way to iterate on your designs, this resource provides flexibility for teams who already use Figma.
 
+### Expanded availability of Trace Explorer
+
+Version : 26.8
+
+FedRAMP and Appian Defense Cloud environments now have access to Trace Explorer , which enables you to identify, analyze, and resolve performance issues present in front-end user interactions. With this expansion, more developers and administrators can investigate interaction performance issues in sites , interfaces , record views , task forms , and reports without needing to dig through logs or open a support case.
+
 ### Component performance improvements
 
 Version : 26.7
 
 This release, we've optimized several components to ensure your applications remain fast and responsive. You'll see the greatest improvement when using these components in more complex designs with large amounts of data. Learn more about interface performance .
 
-## Sites and Portals
-
-### Take control of buttons with new CSS profile properties
+### Initiate text messages directly from a mobile device
 
 Version : 26.7
 
-We're continuing to deliver more robust CSS profile capabilities with the introduction of even more properties . These new properties allow you to easily customize button padding, font styling, minimum button width, and border width, as well as spacing between buttons. And, you can now precisely control the border radius of card and box layouts. With more design options, we're making it easier to map your organization's unique design system directly to your interfaces.
+The safe link component now supports the sms: URI, so you can configure links to open directly in a device's default text messaging application.
 
 ## Administration
+
+### Stay informed with announcements in MyAppian
+
+Version : 26.8
+
+For both Appian Cloud and self-managed environments, we've added an Announcements page on the all-new Notifications tab in MyAppian. These announcements deliver important updates, service changes, and maintenance notices curated specifically for your environment. Designated support contacts will also receive convenient announcement emails with helpful recommended actions and links to relevant documentation so your organization can stay ahead of critical changes.
+
+We've also grouped the Self-Service Alerts page under the Notifications tab for easy access in Appian Cloud environments. With these streamlined notification tools, it's easier than ever to keep your team informed and your environments running smoothly.
+
+### Scale your application server automatically with demand
+
+Version : 26.8
+
+We're introducing autoscaling for the Appian Cloud application server, enabling your applications to stay responsive no matter how much traffic comes their way. When demand spikes on sites configured with High Availability, we automatically provision additional capacity and remove it when things quiet down—all without disrupting active users or requiring any action from you. And because the additional capacity we provision follows our High Availability principles, your applications stay resilient even as they scale.
+
+### Skip MFA on trusted devices
+
+Version : 26.8
+
+Enforce multi-factor authentication across your entire organization without adding daily sign-in friction. When the device trust option is enabled, users can choose to remember their device upon verification, skipping further MFA requests on that device. Admins can configure the skip duration from 1 to 90 days and can revoke a user's trusted devices at any time. Now, you can confidently scale platform security while delivering a seamless user experience.
+
+### Tomcat and Jakarta Servlet upgrade
+
+Version : 26.8
+
+We've upgraded Apache Tomcat from 10.1.57 to 11.0.24 and Jakarta Servlet from API 6.0 to 6.1. These updates have no expected impact on application behavior or customer-facing APIs.
 
 ### Capture trace IDs instantly with Interaction Diagnostics
 
@@ -1334,47 +1582,17 @@ You can now stream AI guardrail violation logs to your own systems using Amazon 
 
 ## General resolved issues
 
-- AP-52320 - Medium Appian now correctly handles special Unicode characters in process variables by encoding them as valid XML character references, preventing previous serialization failures. 26.6 General resolved issues
+### 26.7 General resolved issues
 
-### 26.6 General resolved issues
+Version : 26.7
 
-Version : 26.6
-
-- DR-8514 - Medium Fixed inconsistent refresh behavior after form submission in the Appian Mobile app.
-
-- LCP-35431 - Medium Fixed an issue where SharePoint and other Connected System integrations experienced authorization failures due to stale user contexts following user deactivation or renaming.
-
-- LCP-42643 - Medium Fixed an issue with startup performance caused by the translations system record type when multiple locales are configured.
-
-- LCP-2428 - Low Fixed an issue to remove an error incorrectly logged in the debug logs.
-
-### 26.5 General resolved issues
-
-Version : 26.5
-
-- LCP-28445 - Medium Expression editor autosuggest now works correctly when a colon exists on the current line.
-
-- LCP-35274 - Low Viewing a timer configuration no longer incorrectly marks the process model as edited.
-
-- LCP-35257 - Low Process variables used only in MNI configuration are no longer incorrectly flagged as unused.
-
-- LCP-22292 - Low Hidden accessibility text is no longer included when copying and pasting component labels.
-
-### 26.4 general resolved issues
-
-Version : 26.4
-
-- AP-44361 - Medium Fixed broken process diagram layout in Firefox browser.
-
-- LCP-35417 - Low Fixed an issue where downloading PDF files from Tempo news posts incorrectly appended "(version 1)" to the file name.
-
-- LCP-35346 - Low Fixed an issue in the Process Modeler where the Operator and Target values in script task custom outputs appeared corrupted after saving and reopening the node when using the "is stored at index" operator.
-
-- LCP-35305 - Low Fixed an issue where the scrollbar disappeared in the Process Details after updating a process variable value.
-
-- LCP-35224 - Low Fixed an issue where the Password tab in User Settings should remain hidden when a Remember Me token was used to authenticate the user during sign in.
+- AP-52320 - Medium Appian now correctly handles special Unicode characters in process variables by encoding them as valid XML character references, preventing previous serialization failures.
 
 ## Accessibility resolved issues
+
+### 26.7 Accessibility resolved issues
+
+Version : 26.7
 
 - AP-52312 - Medium Multiple dropdown selection ticks and hover states are now visible with Windows high-contrast themes enabled.
 
@@ -1388,6 +1606,12 @@ AP-38419 - Medium Keyboard focus indicators are now visible on frozen sortable g
 
 AP-35518 - Low Keyboard focus indicators are now visible on ellipsis icons in multiple dropdowns.
 
+### 26.8 Accessibility resolved issues
+
+Version : 26.8
+
+- AP-63621 - Medium Fixed an issue where the "Clear Value" action in dropdowns and other fields was announced as a link instead of a button by screen readers, since it performs an action rather than navigating.
+
 ## Evolutions
 
 The following components have newer, improved versions in this release. Existing, old versions in your applications will continue to function normally, but will be renamed on upgrade to indicate that they are older versions.
@@ -1397,6 +1621,12 @@ The following components have newer, improved versions in this release. Existing
 Version : 26.7
 
 We've evolved the card group layout component with enhancements to the fillContainer parameter. These enhancements allow card group contents to more intuitively fill the width of a container without stretching beyond a configurable limit.
+
+### Evolved file upload and signature components
+
+Version : 26.8
+
+We've evolved the file upload and signature components with more flexible button styling . The buttonStyle parameter now accepts "OUTLINE", "GHOST", "LINK", and "SOLID", and the new buttonColor parameter controls the button color separately.
 
 ## Deprecations
 
