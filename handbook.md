@@ -5,7 +5,7 @@ Auto-updated from public Appian release notes. Shows the most recent 2 releases.
 
 ---
 
-## Appian 26.6 — synced 2026-08-31
+## Appian 26.6 — synced 2026-09-07
 
 Source: https://docs.appian.com/suite/help/26.6/Appian_Release_Notes.html
 
@@ -1034,7 +1034,7 @@ Appian Cloud is no longer accepting new customers in the Seoul region. We will r
 
 ---
 
-## Appian 26.8 — synced 2026-08-31
+## Appian 26.8 — synced 2026-09-07
 
 Source: https://docs.appian.com/suite/help/26.8/Appian_Release_Notes.html
 
@@ -1171,6 +1171,14 @@ Turn your requirements into working applications with Appian Composer in the Bui
 You describe what you want, review the proposed plan, and approve execution. Whether working from the Board tab , the Build view , or an interface object , Composer coordinates updates and accounts for dependencies between objects.
 
 Note: Composer in the Build view was introduced in Appian 26.6. For the full release note, see Build applications with natural language in the 26.6 release notes.
+
+### Track story progress and run all tasks at once
+
+Version : 26.8
+
+We've made it easier to track and execute work on the Board tab . Story cards now display a progress indicator showing how many tasks are complete, so you can see each story's status at a glance.
+
+And when you're ready to build, click RUN TASKS in a story to have Composer automatically execute each task in sequence.
 
 ### Improved planning and context management in Composer
 
@@ -1519,12 +1527,6 @@ Version : 26.8
 For both Appian Cloud and self-managed environments, we've added an Announcements page on the all-new Notifications tab in MyAppian. These announcements deliver important updates, service changes, and maintenance notices curated specifically for your environment. Designated support contacts will also receive convenient announcement emails with helpful recommended actions and links to relevant documentation so your organization can stay ahead of critical changes.
 
 We've also grouped the Self-Service Alerts page under the Notifications tab for easy access in Appian Cloud environments. With these streamlined notification tools, it's easier than ever to keep your team informed and your environments running smoothly.
-
-### Scale your application server automatically with demand
-
-Version : 26.8
-
-We're introducing autoscaling for the Appian Cloud application server, enabling your applications to stay responsive no matter how much traffic comes their way. When demand spikes on sites configured with High Availability, we automatically provision additional capacity and remove it when things quiet down—all without disrupting active users or requiring any action from you. And because the additional capacity we provision follows our High Availability principles, your applications stay resilient even as they scale.
 
 ### Skip MFA on trusted devices
 
