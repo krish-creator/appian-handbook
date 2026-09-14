@@ -5,7 +5,7 @@ Auto-updated from public Appian release notes. Shows the most recent 2 releases.
 
 ---
 
-## Appian 26.6 — synced 2026-09-07
+## Appian 26.6 — synced 2026-09-14
 
 Source: https://docs.appian.com/suite/help/26.6/Appian_Release_Notes.html
 
@@ -1034,7 +1034,7 @@ Appian Cloud is no longer accepting new customers in the Seoul region. We will r
 
 ---
 
-## Appian 26.8 — synced 2026-09-07
+## Appian 26.8 — synced 2026-09-14
 
 Source: https://docs.appian.com/suite/help/26.8/Appian_Release_Notes.html
 
@@ -1101,12 +1101,6 @@ The a!agentChatField() component now enables you to take full visual control ove
 Version : 26.8
 
 Bringing an AI agent into a process is now a streamlined experience. Instead of configuring manual expressions, just select your AI agent in the new Setup tab of the Execute AI Agent smart service and watch the node populate with the configured inputs and outputs. You'll also get built-in outputs for success status, run summary, error messages, and AI actions consumed—everything you need to handle errors gracefully and keep an eye on your AI usage.
-
-### Pinpoint the exact AI agent run you need
-
-Version : 26.8
-
-When you test an AI agent with different inputs, new Input and Output columns on the Monitor tab now show what actually changed. The new columns display each run's unique values, so you can tell your AI agent runs apart at a glance. Pair that with the ability to search across those values and debugging your AI agents becomes quick and intuitive.
 
 ### Cut AI action costs with automatic prompt caching for AI agents
 

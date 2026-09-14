@@ -1,6 +1,6 @@
 # Appian Full Reference Catalog
 
-Rebuilt 2026-09-07 from Appian 26.8's own master reference pages (Appian_Functions.html, Smart_Services.html). Titles and links only -- click through to docs.appian.com for full documentation on each item. Not affiliated with or endorsed by Appian Corporation.
+Rebuilt 2026-09-14 from Appian 26.8's own master reference pages (Appian_Functions.html, Smart_Services.html). Titles and links only -- click through to docs.appian.com for full documentation on each item. Not affiliated with or endorsed by Appian Corporation.
 
 
 ## Functions (487)
