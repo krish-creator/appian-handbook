@@ -5,7 +5,7 @@ Auto-updated from public Appian release notes. Shows the most recent 2 releases.
 
 ---
 
-## Appian 26.6 — synced 2026-09-14
+## Appian 26.6 — synced 2026-09-21
 
 Source: https://docs.appian.com/suite/help/26.6/Appian_Release_Notes.html
 
@@ -1034,7 +1034,7 @@ Appian Cloud is no longer accepting new customers in the Seoul region. We will r
 
 ---
 
-## Appian 26.8 — synced 2026-09-14
+## Appian 26.8 — synced 2026-09-21
 
 Source: https://docs.appian.com/suite/help/26.8/Appian_Release_Notes.html
 
