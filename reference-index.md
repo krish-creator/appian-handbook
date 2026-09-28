@@ -5,7 +5,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ---
 
-## Appian 26.6 — indexed 2026-09-21
+## Appian 26.6 — indexed 2026-09-28
 
 
 ### Administration
@@ -92,22 +92,31 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ---
 
-## Appian 26.8 — indexed 2026-09-21
+## Appian 26.9 — indexed 2026-09-28
 
 
 ### Administration
 
 - [Admin Console](https://docs.appian.comAppian_Administration_Console.html)
 - [Admin Console](https://docs.appian.comadmin-appian-authentication.html#sign-out-redirect)
+- [Admin Console](https://docs.appian.comadmin-cloud-secure-link.html)
+- [Admin Console](https://docs.appian.comadmin-internationalization.html)
 - [configuration in the Admin Console](https://docs.appian.comadmin-appian-authentication.html#skip-authenticator-app-setup)
 - [device trust option](https://docs.appian.comadmin-appian-authentication.html#device-trust)
+- [multi-factor authentication (MFA)](https://docs.appian.comadmin-appian-authentication.html#multi-factor-authentication)
+- [set your text in the Admin Console](https://docs.appian.comadmin-branding.html#grid-export)
 
 ### Components
 
+- [Barcode](https://docs.appian.comBarcode_Component.html)
+- [Date](https://docs.appian.comDate_Component.html)
+- [Date and Time](https://docs.appian.comDate_and_Time_Component.html)
 - [Decimal (Floating Point)](https://docs.appian.comFloating_Point_Component.html)
 - [Document image](https://docs.appian.comDocument_Image_Component.html)
 - [Editable grid](https://docs.appian.comEditable_Grid_Component.html)
 - [Integer](https://docs.appian.comInteger_Component.html)
+- [Rich text links](https://docs.appian.comStyled_Text_Component.html)
+- [Styled Text Editor](https://docs.appian.comStyled_Text_Editor_Component.html)
 - [User image](https://docs.appian.comUser_Image_Component.html)
 - [Video](https://docs.appian.comVideo_Component.html)
 - [Web image](https://docs.appian.comWeb_Image_Component.html)
@@ -115,12 +124,16 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 - [chart components](https://docs.appian.comSAIL_Components.html#charts)
 - [event history list](https://docs.appian.comEvent_History_List_Component.html)
 - [file upload](https://docs.appian.comFile_Upload_Component.html)
+- [image](https://docs.appian.comImage_Component.html)
+- [link components](https://docs.appian.comLink_Component.html)
 - [page link](https://docs.appian.comPage_Link_Component.html)
 - [read-only grid](https://docs.appian.comPaging_Grid_Component.html)
+- [read-only grids](https://docs.appian.comGrid_Column_Component.html)
 - [record action](https://docs.appian.comRecord_Action_Component.html)
 - [rich text](https://docs.appian.comRich_Text_Component.html)
 - [safe link](https://docs.appian.comWeb_Link_Component.html)
 - [signature](https://docs.appian.comSignature_Component.html)
+- [web content](https://docs.appian.comWeb_Content_Component.html)
 
 ### Logs
 
@@ -132,12 +145,20 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ### Objects
 
+- [hide the site navigation menu](https://docs.appian.comsites_object.html#navigation-bar)
 - [interfaces](https://docs.appian.cominterface_object.html)
 - [sites](https://docs.appian.comsites_object.html)
+- [sites](https://docs.appian.comsites_object.html#configure-the-logo-link)
 - [test values](https://docs.appian.cominterface_object.html#testing-interfaces)
+
+### Process Models
+
+- [Reduce AI action consumption](https://docs.appian.comagent-studio-best-practices.html#filter-process-model-tool-outputs)
 
 ### Smart Services
 
 - [Execute AI Agent smart service](https://docs.appian.comExecute_AI_Agent_Smart_Service.html)
+- [Redact Document smart service](https://docs.appian.comRedact_Document_Smart_Service.html)
 - [Send Push Notification](https://docs.appian.comSend_Push_Notification_Smart_Service.html)
 - [Start Process Smart Service](https://docs.appian.comStart_Process_Smart_Service.html)
+- [a!syncRecords()](https://docs.appian.comSync_Records_Smart_Service.html)
