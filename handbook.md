@@ -5,7 +5,7 @@ Auto-updated from public Appian release notes. Shows the most recent 2 releases.
 
 ---
 
-## Appian 26.6 — synced 2026-09-28
+## Appian 26.6 — synced 2026-10-05
 
 Source: https://docs.appian.com/suite/help/26.6/Appian_Release_Notes.html
 
@@ -1034,7 +1034,7 @@ Appian Cloud is no longer accepting new customers in the Seoul region. We will r
 
 ---
 
-## Appian 26.9 — synced 2026-09-28
+## Appian 26.9 — synced 2026-10-05
 
 Source: https://docs.appian.com/suite/help/26.9/Appian_Release_Notes.html
 
@@ -1048,11 +1048,17 @@ Access new features and improvements every month on Appian Cloud. Appian Documen
 
 Version : 26.9
 
-We're expanding Appian AI capabilities for self-managed environments . You can now deploy Appian AI capabilities using your choice of cloud-agnostic infrastructure, with no AWS dependency.
+We're expanding Appian AI capabilities for self-managed environments . You can now deploy the following Appian AI capabilities using your choice of cloud-agnostic infrastructure, with no AWS dependency. Just connect your own large language model, and your teams can:
 
-Just connect your own large language model, and your teams can plan and generate foundational objects with Composer, chat with their records, and create generative AI skills. You can use our AI capabilities all within your own infrastructure, even offline.
+- plan and generate foundational objects with Composer ,
 
-Whether you work in defense, government, or financial services, you can now put the full power of Appian AI to work without sending a single request outside your environment.
+- chat with their records , and
+
+- create generative AI skills .
+
+You can use certain AI capabilities within your own infrastructure, even offline. Whether you work in defense, government, or financial services, you can now put the full power of Appian AI to work without sending a single request outside your environment.
+
+Stay tuned to future releases as we expand the list of AI features available for self-managed environments.
 
 ### Plug-In Composer: Build Appian Plug-ins from a prompt
 
@@ -1436,6 +1442,12 @@ Apache Kafka connected systems can now use the JWT bearer authorization grant fo
 
 Building on these security enhancements, Kafka connected systems also support SASL extensions for OAuth authentication, so you can pass routing or identity context to your broker. When you select the OAuth client credentials or OAuth JWT bearer mechanism for SASL or SASL-SSL, add the extension names and values that you want to send during the OAUTHBEARER handshake—no complex configuration required! These updates give you even more flexibility in securely integrating Appian with Kafka.
 
+### Call web APIs and first-party clients as the logged-in user with OAuth
+
+Version : 26.9
+
+Appian now supports the OAuth 2.0/2.1 authorization code grant, so external applications and AI tools can call Appian on behalf of a logged-in user. User-scoped access tokens preserve each user's permissions, record-level security, and attribution, which lets you avoid shared credentials to access Appian resources. Administrators register OAuth 2.0 Authorization Code grant clients with approved redirect URIs, scopes, and groups in Web API Authentication, and Proof Key for Code Exchange (PKCE) keeps the flow secure. It is a cleaner, safer way to connect Web API and first-party clients to Appian.
+
 ### Stream your event consumer logs
 
 Version : 26.7
@@ -1775,12 +1787,6 @@ Version : 26.9
 You can now view and manage Dynamic VPN tunnels directly from Self-Service VPN in MyAppian—no support case required for day-to-day configuration changes.
 
 To access your Dynamic VPN configurations, navigate to Health in MyAppian , then click Cloud Resources > Connectivity , and select your Appian Cloud environment.
-
-### CyberArk integration with the credential vault service
-
-Version : 26.9
-
-The new credential vault service integrates Appian with CyberArk Central Credential Provider (CCP), so HTTP connected systems and RPA bots retrieve credentials from your vault at runtime instead of storing passwords in the platform. Resolved secrets are kept in a short-lived, encrypted in-memory cache, so rotated passwords are picked up automatically and nothing is written to disk or a log. Administrators point each connected system at the right vault per environment through import customization files, and secret-level access groups keep sensitive credentials selectable only by the developers you authorize. For teams with strict security mandates, the credential vault service is a secure-by-default way to prove passwords are never stored in Appian.
 
 ### Upgraded Cloud Database to version 11.8
 

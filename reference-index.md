@@ -5,7 +5,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ---
 
-## Appian 26.6 — indexed 2026-09-28
+## Appian 26.6 — indexed 2026-10-05
 
 
 ### Administration
@@ -92,7 +92,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ---
 
-## Appian 26.9 — indexed 2026-09-28
+## Appian 26.9 — indexed 2026-10-05
 
 
 ### Administration
@@ -101,6 +101,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 - [Admin Console](https://docs.appian.comadmin-appian-authentication.html#sign-out-redirect)
 - [Admin Console](https://docs.appian.comadmin-cloud-secure-link.html)
 - [Admin Console](https://docs.appian.comadmin-internationalization.html)
+- [OAuth 2.0 Authorization Code grant clients](https://docs.appian.comadmin-web-api-authentication.html#oauth-20-authorization-code-grant-clients)
 - [configuration in the Admin Console](https://docs.appian.comadmin-appian-authentication.html#skip-authenticator-app-setup)
 - [device trust option](https://docs.appian.comadmin-appian-authentication.html#device-trust)
 - [multi-factor authentication (MFA)](https://docs.appian.comadmin-appian-authentication.html#multi-factor-authentication)
@@ -122,6 +123,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 - [Web image](https://docs.appian.comWeb_Image_Component.html)
 - [a!processTaskLink()](https://docs.appian.comProcess_Task_Link_Component.html)
 - [chart components](https://docs.appian.comSAIL_Components.html#charts)
+- [chat with their records](https://docs.appian.comRecords_Chat_Component.html)
 - [event history list](https://docs.appian.comEvent_History_List_Component.html)
 - [file upload](https://docs.appian.comFile_Upload_Component.html)
 - [image](https://docs.appian.comImage_Component.html)
