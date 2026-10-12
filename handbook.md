@@ -5,7 +5,7 @@ Auto-updated from public Appian release notes. Shows the most recent 2 releases.
 
 ---
 
-## Appian 26.6 — synced 2026-10-05
+## Appian 26.6 — synced 2026-10-12
 
 Source: https://docs.appian.com/suite/help/26.6/Appian_Release_Notes.html
 
@@ -1034,7 +1034,7 @@ Appian Cloud is no longer accepting new customers in the Seoul region. We will r
 
 ---
 
-## Appian 26.9 — synced 2026-10-05
+## Appian 26.9 — synced 2026-10-12
 
 Source: https://docs.appian.com/suite/help/26.9/Appian_Release_Notes.html
 
@@ -1492,11 +1492,13 @@ The process modeler now uses your locale setting to display labels and UI elemen
 
 ## Process HQ
 
-### Analyze your processes with less setup than ever
+### Analyze your processes faster and with less setup than ever
 
 Version : 26.9
 
 The powerful ability to analyze process data in Process HQ no longer requires a separate setup for self-managed customers. This update means the standalone PostgreSQL database, object storage, and Helm chart are gone , so you can get started even faster on your first insights.
+
+Opening processes is also faster for all customers. Now, the first time you open a process, you won't have to wait as long to start your analysis. No action is required—you'll notice these performance improvements when your processes sync automatically during the site upgrade.
 
 ### Introducing process KPI reports
 

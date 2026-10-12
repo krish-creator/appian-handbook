@@ -5,7 +5,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ---
 
-## Appian 26.6 — indexed 2026-10-05
+## Appian 26.6 — indexed 2026-10-12
 
 
 ### Administration
@@ -92,7 +92,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ---
 
-## Appian 26.9 — indexed 2026-10-05
+## Appian 26.9 — indexed 2026-10-12
 
 
 ### Administration
