@@ -5,7 +5,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ---
 
-## Appian 26.6 — indexed 2026-10-26
+## Appian 26.6 — indexed 2026-11-02
 
 
 ### Administration
@@ -92,7 +92,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ---
 
-## Appian 26.9 — indexed 2026-10-26
+## Appian 26.9 — indexed 2026-11-02
 
 
 ### Administration
@@ -104,6 +104,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 - [OAuth 2.0 Authorization Code grant clients](https://docs.appian.comadmin-web-api-authentication.html#oauth-20-authorization-code-grant-clients)
 - [configuration in the Admin Console](https://docs.appian.comadmin-appian-authentication.html#skip-authenticator-app-setup)
 - [device trust option](https://docs.appian.comadmin-appian-authentication.html#device-trust)
+- [manage their archived processes](https://docs.appian.comadmin-process-management.html)
 - [multi-factor authentication (MFA)](https://docs.appian.comadmin-appian-authentication.html#multi-factor-authentication)
 - [set your text in the Admin Console](https://docs.appian.comadmin-branding.html#grid-export)
 
