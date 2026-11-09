@@ -5,7 +5,7 @@ Auto-updated from public Appian release notes. Shows the most recent 2 releases.
 
 ---
 
-## Appian 26.6 — synced 2026-11-02
+## Appian 26.6 — synced 2026-11-09
 
 Source: https://docs.appian.com/suite/help/26.6/Appian_Release_Notes.html
 
@@ -607,7 +607,7 @@ Version : 26.4
 
 Preparing your data for Process HQ is now more intuitive and efficient. The Data Governance page features a new semantic search, allowing you to find relevant record types without knowing the exact name.
 
-Once you've found your record type, you can review an AI-generated summary and choose whether to show the record type and its related record types as datasets . These enhancements give you the speed and control needed to quickly transform your information into actionable business insights.
+Once you've found your record type, you can review an AI-generated summary and choose whether to publish the record type and its related record types for analytics and AI . These enhancements give you the speed and control needed to quickly transform your information into actionable business insights.
 
 ### Instantly view existing reports and dashboards for your datasets
 
@@ -1034,7 +1034,7 @@ Appian Cloud is no longer accepting new customers in the Seoul region. We will r
 
 ---
 
-## Appian 26.9 — synced 2026-11-02
+## Appian 26.9 — synced 2026-11-09
 
 Source: https://docs.appian.com/suite/help/26.9/Appian_Release_Notes.html
 
@@ -1050,11 +1050,13 @@ Version : 26.9
 
 We're expanding Appian AI capabilities for self-managed environments . You can now deploy the following Appian AI capabilities using your choice of cloud-agnostic infrastructure, with no AWS dependency. Just connect your own large language model, and your teams can:
 
-- plan and generate foundational objects with Composer ,
+- Plan and generate foundational objects with Composer .
 
-- chat with their records , and
+- Chat with their records .
 
-- create generative AI skills .
+- Create generative AI skills .
+
+- Connect external AI applications to Appian through the Appian MCP Server .
 
 You can use certain AI capabilities within your own infrastructure, even offline. Whether you work in defense, government, or financial services, you can now put the full power of Appian AI to work without sending a single request outside your environment.
 

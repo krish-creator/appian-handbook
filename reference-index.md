@@ -5,7 +5,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ---
 
-## Appian 26.6 — indexed 2026-11-02
+## Appian 26.6 — indexed 2026-11-09
 
 
 ### Administration
@@ -37,8 +37,8 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 ### Record Types / Data Fabric
 
 - [build a record type](https://docs.appian.comconnect-record-type-to-snowflake.html)
-- [show the record type and its related record types as datasets](https://docs.appian.comdata-governance-page.html#show-record-types-as-datasets)
-- [show your record type as a dataset in Process HQ](https://docs.appian.comsecure-data-for-process-hq.html#show-record-types-as-datasets)
+- [publish the record type and its related record types for analytics and AI](https://docs.appian.comdata-governance-page.html#publish-record-types-for-analytics-and-ai)
+- [show your record type as a dataset in Process HQ](https://docs.appian.comsecure-data-for-process-hq.html#publish-record-types-for-analytics-and-ai)
 
 ### Smart Services
 
@@ -92,7 +92,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ---
 
-## Appian 26.9 — indexed 2026-11-02
+## Appian 26.9 — indexed 2026-11-09
 
 
 ### Administration
@@ -111,6 +111,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 ### Components
 
 - [Barcode](https://docs.appian.comBarcode_Component.html)
+- [Chat with their records](https://docs.appian.comRecords_Chat_Component.html)
 - [Date](https://docs.appian.comDate_Component.html)
 - [Date and Time](https://docs.appian.comDate_and_Time_Component.html)
 - [Decimal (Floating Point)](https://docs.appian.comFloating_Point_Component.html)
@@ -124,7 +125,6 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 - [Web image](https://docs.appian.comWeb_Image_Component.html)
 - [a!processTaskLink()](https://docs.appian.comProcess_Task_Link_Component.html)
 - [chart components](https://docs.appian.comSAIL_Components.html#charts)
-- [chat with their records](https://docs.appian.comRecords_Chat_Component.html)
 - [event history list](https://docs.appian.comEvent_History_List_Component.html)
 - [file upload](https://docs.appian.comFile_Upload_Component.html)
 - [image](https://docs.appian.comImage_Component.html)
