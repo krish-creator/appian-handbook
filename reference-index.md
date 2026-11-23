@@ -5,13 +5,12 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ---
 
-## Appian 26.6 — indexed 2026-11-16
+## Appian 26.6 — indexed 2026-11-23
 
 
 ### Administration
 
 - [Admin Console](https://docs.appian.comadmin-dynatrace.html)
-- [Forgot Password emails](https://docs.appian.comadmin-appian-authentication.html#email-templates)
 
 ### Components
 
@@ -92,7 +91,7 @@ Links only -- titles and URLs pointing to Appian's own official documentation fo
 
 ---
 
-## Appian 26.9 — indexed 2026-11-16
+## Appian 26.9 — indexed 2026-11-23
 
 
 ### Administration

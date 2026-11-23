@@ -5,7 +5,7 @@ Auto-updated from public Appian release notes. Shows the most recent 2 releases.
 
 ---
 
-## Appian 26.6 — synced 2026-11-16
+## Appian 26.6 — synced 2026-11-23
 
 Source: https://docs.appian.com/suite/help/26.6/Appian_Release_Notes.html
 
@@ -1034,7 +1034,7 @@ Appian Cloud is no longer accepting new customers in the Seoul region. We will r
 
 ---
 
-## Appian 26.9 — synced 2026-11-16
+## Appian 26.9 — synced 2026-11-23
 
 Source: https://docs.appian.com/suite/help/26.9/Appian_Release_Notes.html
 
@@ -1413,6 +1413,8 @@ You can now monitor native Kafka Event Consumer activity directly from the Monit
 See at a glance whether each consumer is active, inactive, or running with failed events, quickly activate or deactivate consumers, and drill into the individual events a consumer has processed. For any successful or failed event, you can inspect its status, Kafka partition and offset, payload, and error details. You can reconcile what Kafka published against what Appian processed and trace exactly what happened, all without digging through log files.
 
 Fixing errors is easier than ever. Depending on the underlying issue, you can reprocess the event in its original form, or edit its key, value, or headers to correct a data problem and then reprocess the updated event. Each attempt is recorded with a link to the original event, so you keep a clear, auditable recovery history. Check that your handler is safe to run again, then restore the missed business action with confidence.
+
+You can also view original successful events on the Event Consumer Monitoring tab to get full visibility into both successful and failed event processing. Viewing successful events is available upon request. Contact Appian Support to enable this for your environment. When enabled, successful events are available for the last 3 days.
 
 ### Tune error handling and alerts for each event consumer
 
